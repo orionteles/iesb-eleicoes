@@ -3,17 +3,19 @@ include_once 'Partido.php';
 
 $partido = new Partido();
 
+// Decidindo se ira atualizar ou inserir
 if(!empty($_GET['id_partido'])){
     $partido->carregarPorId($_GET['id_partido']);
 }
-
+// Incluindo o inicio da aplicação
 include_once '../cabecalho.php';
+
 ?>
 
     <div class="panel box-shadow-none content-header">
         <div class="panel-body">
             <div class="col-md-12">
-                <h3 class="animated fadeInLeft">Partidos</h3>
+                <h3 class="animated fadeInLeft"> <img src="./partido.png" width="60px" height="60px" alt="partido"> Partidos</h3>
             </div>
         </div>
     </div>
@@ -28,19 +30,19 @@ include_once '../cabecalho.php';
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="sigla" name="sigla" required  value="<?php echo $partido->getSigla(); ?>">
                         <span class="bar"></span>
-                        <label>Sigla</label>
+                        <label> <i class="fa fa-sort-alpha-asc"></i> Sigla</label>
                     </div>
 
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="nome" name="nome" required  value="<?php echo $partido->getNome(); ?>">
                         <span class="bar"></span>
-                        <label>Nome</label>
+                        <label> <i class="fa fa-institution"></i> Nome</label>
                     </div>
 
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="numero" name="numero" required  value="<?php echo $partido->getNumero(); ?>">
                         <span class="bar"></span>
-                        <label>Número</label>
+                        <label> <i class="fa fa-sort-numeric-asc"></i> Número</label>
                     </div>
 
                     <div class="form-group">
@@ -55,4 +57,6 @@ include_once '../cabecalho.php';
     </div>
 
 <?php
+
+// Incluindo o termino da aplicação
 include_once '../rodape.php';
