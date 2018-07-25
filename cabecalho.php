@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 
     <meta charset="utf-8">
-    <meta name="description" content="Miminium Admin Template v.1">
-    <meta name="author" content="Isna Nur Azis">
+    <meta name="description" content="A elections app">
+    <meta name="author" content="4º semester Iesb's ADS course">
     <meta name="keyword" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miminium</title>
+    <title>Iesb eleições</title>
 
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" href="../tema/asset/css/bootstrap.min.css">
@@ -52,7 +52,7 @@
                         <div class="form-group form-animate-text">
                             <input type="text" class="form-text" required>
                             <span class="bar"></span>
-                            <label class="label-search">Type anywhere to <b>Search</b> </label>
+                            <label class="label-search">Digite Aqui para  <b>Pesquisar</b> </label>
                         </div>
                     </div>
                 </li>
@@ -94,19 +94,19 @@
                     <p class="animated fadeInRight">Sat,October 1st 2029</p>
                 </li>
                 <li class="active ripple">
-                    <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Voto</a>
+                    <a class="tree-toggle nav-header"><span class="fa fa-check-square"></span> Voto</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Candidato</a>
+                    <a class="tree-toggle nav-header"><span class="fa fa-users"></span> Candidatos</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Partido</a>
+                    <a class="tree-toggle nav-header"  ><span class="fa fa-hand-paper-o"></span> Partido</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Cargo</a>
+                    <a class="tree-toggle nav-header"><span class="fa fa-suitcase"></span> Cargo</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Eleitor</a>
+                    <a class="tree-toggle nav-header"><span class="fa fa-user"></span> Eleitor</a>
                 </li>
             </ul>
         </div>
