@@ -40,7 +40,7 @@ include_once '../cabecalho.php';
                     </div>
 
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="numer" class="form-text" id="numero" name="numero" required  value="<?php echo $partido->getNumero(); ?>">
+                        <input type="number" class="form-text" id="numero" name="numero" required  value="<?php echo $partido->getNumero(); ?>">
                         <span class="bar"></span>
                         <label> <i class="fa fa-sort-numeric-asc"></i> Número</label>
                     </div>
