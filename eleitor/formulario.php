@@ -1,4 +1,6 @@
 <?php
+
+// Incluindo a classe de Eleitor
 include_once 'Eleitor.php';
 
 $eleitor = new Eleitor();
@@ -26,7 +28,6 @@ include_once '../cabecalho.php';
                 <form action="processamento.php?acao=salvar" method="post" class="form-horizontal">
                     <!-- ID do eleitor -->
                     <input type="hidden" name="id_eleitor" value="<?php echo $eleitor->getId_eleitor(); ?>">
-
                     <!-- Nome -->
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="nome" name="nome" required  value="<?php echo $eleitor->getNome(); ?>">
@@ -63,25 +64,17 @@ include_once '../cabecalho.php';
                         <span class="bar"></span>
                         <label> <i class="icons icon-map"></i> CEP</label>
                     </div>
-
                 </div>
                 <!-- Segunda coluna do Formulário -->
                 <div class="col-md-6">
-                    
                      <!-- logradouro -->
                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="logradouro" name="logradouro" required  value="<?php echo $eleitor->getLogradouro(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-location-pin"></i> Logradouro</label>
                     </div>
-                     <!-- complemento -->
-                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="complemento" name="complemento" required  value="<?php echo $eleitor->getComplemento(); ?>">
-                        <span class="bar"></span>
-                        <label> <i class="icons icon-location-pin"></i> Complemento</label>
-                    </div>
                     <!-- bairro -->
-                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                    <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="bairro" name="bairro" required  value="<?php echo $eleitor->getBairro(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-location-pin"></i> Bairro</label>
@@ -91,6 +84,12 @@ include_once '../cabecalho.php';
                         <input type="text" class="form-text" id="numero_endereco" name="numero_endereco" required  value="<?php echo $eleitor->getNumero_endereco(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-location-pin"></i> Numero Endereco</label>
+                    </div>
+                    <!-- complemento -->
+                    <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text" class="form-text" id="complemento" name="complemento"  value="<?php echo $eleitor->getComplemento(); ?>">
+                        <span class="bar"></span>
+                        <label> <i class="icons icon-location-pin"></i> Complemento</label>
                     </div>
                     <!-- id_municipio-->
                     <input type="hidden" class="form-text" id="id_municipio" name="id_municipio" required  value="<?php echo $eleitor->getId_municipio(); ?>">
@@ -113,8 +112,8 @@ include_once '../cabecalho.php';
                 </form>
         </div>
     </div>
-
 <?php
+include_once '../location/scriptCEP.php';
 
 // Incluindo o termino da aplicação
 include_once '../rodape.php';
