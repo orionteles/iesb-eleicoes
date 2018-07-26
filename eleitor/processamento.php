@@ -1,18 +1,24 @@
 <?php
-include_once 'Partido.php';
+/**
+ * Processando os dados de Eleitor
+ * 
+ */
 
-$partido = new Partido();
+//  Incluindo a classe de eleitor
+include_once 'Eleitor.php';
+
+$eleitor = new eleitor();
 
 switch ($_GET['acao']){
     case 'salvar':
-        if(!empty($_POST['id_partido'])){
-            $partido->alterar($_POST);
+        if(!empty($_POST['id_eleitor'])){
+            $eleitor->alterar($_POST);
         } else {
-            $partido->inserir($_POST);
+            $eleitor->inserir($_POST);
         }
         break;
     case 'excluir':
-        $partido->excluir($_GET['id_partido']);
+        $eleitor->excluir($_GET['id_eleitor']);
         break;
 }
 
