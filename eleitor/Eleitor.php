@@ -288,7 +288,7 @@ class Eleitor{
         return $conexao->recuperarDados($sql);
     }
 
-    public function carregarPorId($id_partido)
+    public function carregarPorId($id_eleitor)
     {
         $conexao = new Conexao();
 
@@ -322,12 +322,13 @@ class Eleitor{
         $complemento  = $dados['complemento'];
         $bairro  = $dados['bairro'];
         $numero_endereco  = $dados['numero_endereco'];
+        // Falta realizar a implementação de municipio
         $id_municipio  = $dados['id_municipio'];
         $foto  = $dados['foto'];
 
         $conexao = new Conexao();
 
-        $sql = "insert into partido (nome, titulo, zona,
+        $sql = "insert into eleitor (nome, titulo, zona,
                                      secao, telefone, cep,
                                       logradouro, complemento,
                                        bairro, numero_endereco,
@@ -336,6 +337,7 @@ class Eleitor{
                             '$secao', '$telefone', '$cep',
                             '$logradouro', '$complemento', '$bairro', 
                             '$numero_endereco', '$id_municipio', '$foto')";
+                            print_r($sql);die;
 
         return $conexao->executar($sql);
     }
@@ -359,7 +361,6 @@ class Eleitor{
         $conexao = new Conexao();
 
         $sql = "update eleitor set
-
         nome = '$nome',
         titulo = '$titulo',
         zona = '$zona',
@@ -372,13 +373,12 @@ class Eleitor{
         numero_endereco = '$numero_endereco', 
         id_municipio = '$id_municipio', 
         foto = '$foto'
-        
         where id_eleitor = '$id_eleitor";
 
         return $conexao->executar($sql);
     }
 
-    public function excluir($id_partido)
+    public function excluir($id_eleitor)
     {
         $conexao = new Conexao();
 
