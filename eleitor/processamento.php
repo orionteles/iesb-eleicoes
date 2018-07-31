@@ -3,8 +3,6 @@
  * Processando os dados de Eleitor
  * 
  */
-
-//  Incluindo a classe de eleitor
 include_once 'Eleitor.php';
 
 $eleitor = new eleitor();
