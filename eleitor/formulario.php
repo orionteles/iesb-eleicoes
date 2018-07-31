@@ -2,8 +2,15 @@
 
 // Incluindo a classe de Eleitor
 include_once 'Eleitor.php';
-
 $eleitor = new Eleitor();
+
+// incluindo os municipios
+include_once '../municipio/Municipio.php';
+$municipio = new Municipio();
+
+// Recuprando os dados de municipio
+$municipios = $municipio->recuperarDados();
+
 
 // Decidindo se ira atualizar ou inserir
 if(!empty($_GET['id_eleitor'])){
