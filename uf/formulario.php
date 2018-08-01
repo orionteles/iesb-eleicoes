@@ -3,7 +3,7 @@ include_once 'Uf.php';
 
 $uf = new Uf();
 
-if(!empty($_GET['id_uf'])){
+if (!empty($_GET['id_uf'])) {
     $uf->carregarPorId($_GET['id_uf']);
 }
 
@@ -23,17 +23,26 @@ include_once '../cabecalho.php';
             <div class="col-md-12">
 
                 <form action="processamento.php?acao=salvar" method="post" class="form-horizontal">
-                    <input type="hidden" name="id_uf" value="<?php echo $uf->getIdUf(); ?>">
 
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="id_uf" name="id_uf" required  value="<?php echo $uf->getNome(); ?>">
+                        <input type="text" class="form-text" id="id_uf" name="id_uf" required
+                               value="<?= $uf->getIdUf(); ?>">
                         <span class="bar"></span>
                         <label>Sigla UF</label>
                     </div>
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="nome" name="nome" required  value="<?php echo $uf->getNome(); ?>">
+                        <input type="text" class="form-text" id="nome" name="nome" required
+                               value="<?php echo $uf->getNome(); ?>">
                         <span class="bar"></span>
                         <label>Nome</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success"><span class="fa fa-thumbs-o-up"> </span>
+                                Salvar
+                            </button>
+                            <a class="btn btn-danger" href="index.php"><span class="fa fa-reply"> </span> Voltar</a>
+                        </div>
                     </div>
                 </form>
             </div>

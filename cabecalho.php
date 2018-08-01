@@ -52,7 +52,7 @@
                         <div class="form-group form-animate-text">
                             <input type="text" class="form-text" required>
                             <span class="bar"></span>
-                            <label class="label-search">Digite Aqui para  <b>Pesquisar</b> </label>
+                            <label class="label-search">Digite Aqui para <b>Pesquisar</b> </label>
                         </div>
                     </div>
                 </li>
@@ -61,7 +61,8 @@
             <ul class="nav navbar-nav navbar-right user-nav">
                 <li class="user-name"><span>Akihiko Avaron</span></li>
                 <li class="dropdown avatar-dropdown">
-                    <img src="../tema/asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+                    <img src="../tema/asset/img/avatar.jpg" class="img-circle avatar" alt="user name"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                     <ul class="dropdown-menu user-dropdown">
                         <li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
                         <li><a href="#"><span class="fa fa-calendar"></span> My Calendar</a></li>
@@ -75,7 +76,7 @@
                         </li>
                     </ul>
                 </li>
-                <li ><a href="#" class="opener-right-menu"><span class="fa fa-coffee"></span></a></li>
+                <li><a href="#" class="opener-right-menu"><span class="fa fa-coffee"></span></a></li>
             </ul>
         </div>
     </div>
@@ -88,25 +89,30 @@
     <div id="left-menu">
         <div class="sub-left-menu scroll">
             <ul class="nav nav-list">
-                <li><div class="left-bg"></div></li>
+                <li>
+                    <div class="left-bg"></div>
+                </li>
                 <li class="time">
                     <h1 class="animated fadeInLeft">21:00</h1>
                     <p class="animated fadeInRight">Sat,October 1st 2029</p>
                 </li>
                 <li class="active ripple">
-                    <a class="tree-toggle nav-header"><span class="fa fa-check-square"></span> Voto</a>
+                    <a class="nav-header"><span class="fa fa-check-square"></span> Voto</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"><span class="fa fa-users"></span> Candidatos</a>
+                    <a class="nav-header"><span class="fa fa-users"></span> Candidatos</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"  ><span class="fa fa-hand-paper-o"></span> Partido</a>
+                    <a class="nav-header"><span class="fa fa-hand-paper-o"></span> Partido</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"><span class="fa fa-suitcase"></span> Cargo</a>
+                    <a class="nav-header"><span class="fa fa-suitcase"></span> Cargo</a>
                 </li>
                 <li class="ripple">
-                    <a class="tree-toggle nav-header"><span class="fa fa-user"></span> Eleitor</a>
+                    <a class="nav-header"><span class="fa fa-user"></span> Eleitor</a>
+                </li>
+                <li class="ripple">
+                    <a class="nav-header" href="../uf/index.php"><span class="fa fa-user"></span> UF</a>
                 </li>
             </ul>
         </div>

@@ -2,31 +2,43 @@
 
 include_once '../Conexao.php';
 
-class Uf{
+class Uf
+{
 
     protected $id_uf;
     protected $nome;
 
-    public function getId_uf()
+    /**
+     * @return mixed
+     */
+    public function getIdUf()
     {
         return $this->id_uf;
     }
 
-    public function setId_uf($id_uf)
+    /**
+     * @param mixed $id_uf
+     */
+    public function setIdUf($id_uf)
     {
         $this->id_uf = $id_uf;
     }
 
+    /**
+     * @return mixed
+     */
     public function getNome()
     {
         return $this->nome;
     }
 
+    /**
+     * @param mixed $nome
+     */
     public function setNome($nome)
     {
         $this->nome = $nome;
     }
-
 
 
     public function recuperarDados()
@@ -39,13 +51,18 @@ class Uf{
 
     public function carregarPorId($id_uf)
     {
+
         $conexao = new Conexao();
 
-        $sql = "select * from uf where id_uf = $id_uf";
+
+        $sql = "select * from uf where id_uf = '$id_uf'";
+
         $dados = $conexao->recuperarDados($sql);
-        
+
         $this->id_uf = $dados[0]['id_uf'];
         $this->nome = $dados[0]['nome'];
+
+        return $conexao->executar($sql);
     }
 
     public function inserir($dados)
@@ -66,9 +83,10 @@ class Uf{
         $conexao = new Conexao();
 
         $sql = "update uf set
-                  nome = '$nome',
+                  id_uf = $id_uf,
+                  nome = '$nome'
                 where id_uf = $id_uf";
-
+//print_r($sql);die;
         return $conexao->executar($sql);
     }
 

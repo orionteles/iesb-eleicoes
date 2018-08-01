@@ -3,9 +3,10 @@ include_once 'Uf.php';
 
 $uf = new Uf();
 
-switch ($_GET['acao']){
+switch ($_GET['acao']) {
     case 'salvar':
-        if(!empty($_POST['id_uf'])){
+        if (!empty($_POST['id_uf'])) {
+//            print_r($_POST);die;
             $uf->alterar($_POST);
         } else {
             $uf->inserir($_POST);

@@ -7,13 +7,13 @@ $aUf = $uf->recuperarDados();
 include_once '../cabecalho.php';
 ?>
 
-<div class="panel box-shadow-none content-header">
-    <div class="panel-body">
-        <div class="col-md-12">
-            <h3 class="animated fadeInLeft">União Federativa</h3>
+    <div class="panel box-shadow-none content-header">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <h3 class="animated fadeInLeft">União Federativa</h3>
+            </div>
         </div>
     </div>
-</div>
 
     <div class="col-md-12 top-20 padding-0">
         <div class="col-md-12">
@@ -24,15 +24,16 @@ include_once '../cabecalho.php';
                 <div class="panel-body">
                     <div class="responsive-table">
 
-                        <table id="datatables-example" class="table table-bordered table-hover table-striped table-condensed">
+                        <table id="datatables-example"
+                               class="table table-bordered table-hover table-striped table-condensed">
                             <thead>
                             <tr>
-                                <th colspan="2" width="5%">Ações</th>
+                                <th colspan="2" width="10%" style="text-align: center">Ações</th>
                                 <th>Nome</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($aUf as $uf){
+                            <?php foreach ($aUf as $uf) {
                                 echo "
                                     <tr>
                                         <td>
