@@ -2,6 +2,8 @@
 include_once 'Uf.php';
 
 $uf = new Uf();
+//print_r($_POST);echo'<br>';
+//print_r($_GET);die;
 
 switch ($_GET['acao']) {
     case 'salvar':
@@ -9,6 +11,7 @@ switch ($_GET['acao']) {
 //            print_r($_POST);die;
             $uf->alterar($_POST);
         } else {
+//            print_r($_POST);die;
             $uf->inserir($_POST);
         }
         break;

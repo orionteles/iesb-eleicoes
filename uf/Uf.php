@@ -67,11 +67,13 @@ class Uf
 
     public function inserir($dados)
     {
+        $id_uf = $dados['id_uf'];
         $nome = $dados['nome'];
 
         $conexao = new Conexao();
 
-        $sql = "insert into uf (nome) values ('$nome')";
+        $sql = "insert into uf (id_uf, nome) values ('$id_uf', '$nome')";
+//        print_r($sql); die;
         return $conexao->executar($sql);
     }
 
@@ -83,9 +85,9 @@ class Uf
         $conexao = new Conexao();
 
         $sql = "update uf set
-                  id_uf = $id_uf,
+                  id_uf = '$id_uf',
                   nome = '$nome'
-                where id_uf = $id_uf";
+                where id_uf = '$id_uf'";
 //print_r($sql);die;
         return $conexao->executar($sql);
     }
@@ -94,7 +96,7 @@ class Uf
     {
         $conexao = new Conexao();
 
-        $sql = "delete from uf where id_uf = $id_uf";
+        $sql = "delete from uf where id_uf = '$id_uf'";
         return $conexao->executar($sql);
     }
 }
