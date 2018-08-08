@@ -106,7 +106,7 @@
                     <a class="nav-header"><span class="fa fa-hand-paper-o"></span> Partido</a>
                 </li>
                 <li class="ripple">
-                    <a class="nav-header"><span class="fa fa-suitcase"></span> Cargo</a>
+                    <a class="nav-header" href="../cargo/index.php"><span class="fa fa-suitcase"></span> Cargo</a>
                 </li>
                 <li class="ripple">
                     <a class="nav-header"><span class="fa fa-user"></span> Eleitor</a>
