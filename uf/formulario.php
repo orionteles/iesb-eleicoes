@@ -13,7 +13,7 @@ include_once '../cabecalho.php';
     <div class="panel box-shadow-none content-header">
         <div class="panel-body">
             <div class="col-md-12">
-                <h3 class="animated fadeInLeft">União Federativa</h3>
+                <h3 class="animated fadeInLeft">Unidade Federativa</h3>
             </div>
         </div>
     </div>
@@ -28,13 +28,13 @@ include_once '../cabecalho.php';
                         <input type="text" class="form-text" id="id_uf" name="id_uf" required
                                value="<?= $uf->getIdUf(); ?>">
                         <span class="bar"></span>
-                        <label>Sigla UF</label>
+                        <label>Sigla UF <i class="fa fa-map-marker"></i> </label>
                     </div>
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="nome" name="nome" required
                                value="<?php echo $uf->getNome(); ?>">
                         <span class="bar"></span>
-                        <label>Nome</label>
+                        <label>Nome <i class="fa fa-map-marker"></i> </label>
                     </div>
                     <div class="form-group">
                         <div class="text-center">
