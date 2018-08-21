@@ -17,7 +17,6 @@ $aCargos = $mCargo->recuperarDados();
 // Recuprando os dados de Cargo
 $aUf = $mUf->recuperarDados();
 
-
 // Decidindo se ira atualizar ou inserir
 if(!empty($_GET['id_cargo'])){
     $mCargo->carregarPorId($_GET['id_cargo']);
@@ -35,25 +34,30 @@ if(!empty($_GET['id_cargo'])){
     <div class="col-md-offset-1 col-md-10 panel">
         <div class="col-md-12 panel-body" style="padding-bottom:30px;">
         <!--Primeira coluna do Formulário  -->
-        <div class="col-md-12">
+        <div class="col-md-12 col-lg-12">
                 <form action="processamento.php?acao=salvar" method="post" class="form-horizontal">
-                    <input type="hidden" name="id_cargo" value="<?php echo $mCargo->getIdCargo(); ?>">
+                    <input type="hidden" name="id_cargo" value="<?= $mCargo->getIdCargo(); ?>">
 
-                    <div class="form-group form-animate-text col-md-10" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="nome" name="nome" required  value="<?php echo $mCargo->getNome(); ?>">
+                    <div class="form-group form-animate-text col-md-5" style="margin-top:40px !important;">
+                        <input type="text" class="form-text" id="nome" name="nome" required  value="<?= $mCargo->getNome(); ?>">
                         <span class="bar"></span>
                         <label> <i class="fa fa-user"></i>Nome</label>
                     </div>
 
                     <div class="form-group form-animate-text col-md-10" style="margin-top:40px !important;">
-                        <span>Unidade Federativa</span>
-                        <select name="fk_id_uf">
-                            <option value="" selected>Selecione</option>
+                       <label> <i class="fa fa-map-marker"></i> Unidade Federativa</label>
+                        <br>
+                        <br>
+                        <select id="uf" value='<?= $mCargo->getFkIdUf(); ?>' name="fk_id_uf">
+                            <option value="">Selecione</option>
                                 <?php
-//                                    print_r($aUf);die;
+                                
                                 foreach ($aUf as $uf => $ufs){
+                                    $checked = ($ufs['id_uf']) == $mCargo->getFkIdUf() ? 'selected' : '';
+                                    
                                     ?>
-                                    <option value="<?= $ufs['id_uf'] ?>"><?= $ufs['nome'] ?></option>
+                                    <option <?=$checked?> value="<?= $ufs['id_uf'] ?>"><?= $ufs['nome'] ?></option>
+                                
                                 <?php } ?>
                         </select>
                     </div>
