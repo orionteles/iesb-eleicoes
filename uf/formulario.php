@@ -28,13 +28,13 @@ include_once '../cabecalho.php';
                         <input type="text" class="form-text" id="id_uf" name="id_uf" required
                                value="<?= $uf->getIdUf(); ?>">
                         <span class="bar"></span>
-                        <label>Sigla UF</label>
+                        <label>Sigla UF <i class="fa fa-map-marker"></i> </label>
                     </div>
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="nome" name="nome" required
                                value="<?php echo $uf->getNome(); ?>">
                         <span class="bar"></span>
-                        <label>Nome</label>
+                        <label>Nome <i class="fa fa-map-marker"></i> </label>
                     </div>
                     <div class="form-group">
                         <div class="text-center">
