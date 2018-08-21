@@ -41,7 +41,7 @@
                 <span class="middle"></span>
                 <span class="bottom"></span>
             </div>
-            <a href="index.html" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
                 <b>IESB - Eleições 2018</b>
             </a>
 
@@ -103,13 +103,13 @@
                     <a class="nav-header"><span class="fa fa-users"></span> Candidatos</a>
                 </li>
                 <li class="ripple">
-                    <a class="nav-header"><span class="fa fa-hand-paper-o"></span> Partido</a>
+                    <a class="nav-header" href="../partido/index.php"><span class="fa fa-hand-paper-o"></span> Partido</a>
                 </li>
                 <li class="ripple">
                     <a class="nav-header" href="../cargo/index.php"><span class="fa fa-suitcase"></span> Cargo</a>
                 </li>
                 <li class="ripple">
-                    <a class="nav-header"><span class="fa fa-user"></span> Eleitor</a>
+                    <a class="nav-header" href="../eleitor/index.php" ><span class="fa fa-user"></span> Eleitor</a>
                 </li>
                 <li class="ripple">
                     <a class="nav-header" href="../uf/index.php"><span class="fa fa-user"></span> UF</a>
