@@ -1,10 +1,10 @@
 <?php
 // Incluindo a classe de eleitor
-include_once 'Eleitor.php';
+include_once 'Cargo.php';
 
-$eleitor = new Eleitor();
-// Recuperando os dados de eleitores
-$aeleitors = $eleitor->recuperarDados();
+$cargo = new Cargo();
+// Recuperando os dados de $cargos
+$aCargos = $cargo->recuperarDados();
 
 // Incluindo o incio da aplicação
 include_once '../cabecalho.php';
@@ -13,7 +13,7 @@ include_once '../cabecalho.php';
 <div class="panel box-shadow-none content-header">
     <div class="panel-body">
         <div class="col-md-12">
-            <h3 class="animated fadeInLeft"> <span class="fa fa-users"></span> Eleitores</h3>
+            <h3 class="animated fadeInLeft">Cargos</h3>
         </div>
     </div>
 </div>
@@ -32,26 +32,21 @@ include_once '../cabecalho.php';
                             <tr>
                                 <th colspan="2" width="5%">Ações</th>
                                 <th>Nome</th>
-                                <th>Titulo</th>
-                                <th>Zona</th>
-                                <th>Seção</th>
-                                <th>Foto</th>
+                                <th>UF</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($aeleitors as $eleitor){
+                            <?php foreach ($aCargos as $cargo){
                                 echo "
                                     <tr>
                                         <td>
-                                            <a href='formulario.php?id_eleitor={$eleitor['id_eleitor']}'><span class='icons icon-note'></span></a>
+                                            <a href='formulario.php?id_cargo={$cargo['id_cargo']}'><span class='icons icon-note'></span></a>
                                         </td>
                                         <td>
-                                            <a href='processamento.php?acao=excluir&id_eleitor={$eleitor['id_eleitor']}'><span class='fa fa-trash-o'></span></a>
+                                            <a href='processamento.php?acao=excluir&id_cargo={$cargo['id_cargo']}'><span class='fa fa-trash-o'></span></a>
                                         </td>
-                                        <td>{$eleitor['nome']}</td>
-                                        <td>{$eleitor['titulo']}</td>
-                                        <td>{$eleitor['zona']}</td>
-                                        <td>{$eleitor['foto']}</td>
+                                        <td>{$cargo['nome']}</td>
+                                        <td>{$cargo['id_uf']}</td>
                                     </tr>
                                 ";
                             } ?>

@@ -10,7 +10,7 @@ include_once '../cabecalho.php';
     <div class="panel box-shadow-none content-header">
         <div class="panel-body">
             <div class="col-md-12">
-                <h3 class="animated fadeInLeft">União Federativa</h3>
+                <h3 class="animated fadeInLeft">Unidade Federativa</h3>
             </div>
         </div>
     </div>
