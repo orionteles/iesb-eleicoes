@@ -1,3 +1,5 @@
+
+
 <?php
 
 // Incluindo a classe de Eleitor
@@ -10,6 +12,7 @@ $municipio = new Municipio();
 
 // Recuprando os dados de municipio
 $municipios = $municipio->recuperarDados();
+
 
 // Decidindo se ira atualizar ou inserir
 if(!empty($_GET['id_eleitor'])){
@@ -33,78 +36,90 @@ include_once '../cabecalho.php';
         <div class="col-md-6">
                 <form action="processamento.php?acao=salvar" method="post" class="form-horizontal">
                     <!-- ID do eleitor -->
-                    <input type="hidden" name="id_eleitor" value="<?= $eleitor->getId_eleitor(); ?>">
+                    <input type="hidden" name="id_eleitor" value="<?php echo $eleitor->getId_eleitor(); ?>">
                     <!-- Nome -->
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="nome" name="nome" required  value="<?= $eleitor->getNome(); ?>">
+                        <input type="text" class="form-text" id="nome" name="nome" required  value="<?php echo $eleitor->getNome(); ?>">
                         <span class="bar"></span>
                         <label> <i class="fa fa-user"></i> Nome</label>
                     </div>
                     <!-- Titulo -->
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="titulo" name="titulo" required  value="<?= $eleitor->getTitulo(); ?>">
+                        <input type="text" class="form-text" id="titulo" name="titulo" required  value="<?php echo $eleitor->getTitulo(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-credit-card"></i> Titulo</label>
                     </div>
                     <!-- Zona -->
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="zona" name="zona" required  value="<?= $eleitor->getZona(); ?>">
+                        <input type="text" class="form-text" id="zona" name="zona" required  value="<?php echo $eleitor->getZona(); ?>">
                         <span class="bar"></span>
                         <label> <i class="fa fa-sort-numeric-asc"></i> Zona</label>
                     </div>
                     <!-- Seção -->
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="secao" name="secao" required  value="<?= $eleitor->getSecao(); ?>">
+                        <input type="text" class="form-text" id="secao" name="secao" required  value="<?php echo $eleitor->getSecao(); ?>">
                         <span class="bar"></span>
                         <label> <i class="fa fa-sort-numeric-asc"></i> Seção</label>
                     </div>
                      <!-- telefone -->
                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="tel" class="form-text" id="telefone" name="telefone" required  value="<?= $eleitor->getTelefone(); ?>">
+                        <input type="tel" class="form-text" id="telefone" name="telefone" required  value="<?php echo $eleitor->getTelefone(); ?>">
                         <span class="bar"></span>
                         <label> <i class="fa fa-mobile-phone"></i> Telefone</label>
                     </div>
-                     <!-- CEP -->
-                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="cep" name="cep" required  value="<?= $eleitor->getCep(); ?>">
+                    <!-- Foto -->
+                    <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text" class="form-text" id="foto" name="foto" required  value="<?php echo $eleitor->getFoto(); ?>">
                         <span class="bar"></span>
-                        <label> <i class="icons icon-map"></i> CEP</label>
+                        <label> <i class="fa fa-file-photo-o"></i> Foto</label>
                     </div>
+
                 </div>
                 <!-- Segunda coluna do Formulário -->
                 <div class="col-md-6">
+                    <!-- CEP -->
+                    <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text" class="form-text" id="cep" name="cep" required  value="<?php echo $eleitor->getCep(); ?>">
+                        <span class="bar"></span>
+                        <label> <i class="icons icon-map"></i> CEP</label>
+                    </div>
+                    <!-- id_uf -->
+                    <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text" class="form-text" id="id_uf" name="id_uf">
+                        <span class="bar"></span>
+                        <label> <i class="icons icon-location-pin"></i>UF</label>
+                    </div>
+                    <!-- id_municipio -->
+                    <div class="form-group form-animate-text" style="margin-top:40px !important;">
+                        <input type="text" class="form-text" id="id_municipio" name="id_municipio" >
+                        <span class="bar"></span>
+                        <label> <i class="icons icon-location-pin"></i>Id Município</label>
+                    </div>
                      <!-- logradouro -->
                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="logradouro" name="logradouro" required  value="<?= $eleitor->getLogradouro(); ?>">
+                        <input type="text" class="form-text" id="logradouro" name="logradouro" required  value="<?php echo $eleitor->getLogradouro(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-location-pin"></i> Logradouro</label>
                     </div>
                     <!-- bairro -->
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="bairro" name="bairro" required  value="<?= $eleitor->getBairro(); ?>">
+                        <input type="text" class="form-text" id="bairro" name="bairro" required  value="<?php echo $eleitor->getBairro(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-location-pin"></i> Bairro</label>
                     </div>
                     <!-- numero_endereco -->
                      <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="numero_endereco" name="numero_endereco" required  value="<?= $eleitor->getNumero_endereco(); ?>">
+                        <input type="text" class="form-text" id="numero_endereco" name="numero_endereco" required  value="<?php echo $eleitor->getNumero_endereco(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-location-pin"></i> Numero Endereco</label>
                     </div>
                     <!-- complemento -->
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="complemento" name="complemento"  value="<?= $eleitor->getComplemento();?>">
+                        <input type="text" class="form-text" id="complemento" name="complemento"  value="<?php echo $eleitor->getComplemento(); ?>">
                         <span class="bar"></span>
                         <label> <i class="icons icon-location-pin"></i> Complemento</label>
                     </div>
-                    <!-- id_municipio-->
-                    <input type="hidden" class="form-text" id="id_municipio" name="id_municipio" required  value="<?= $eleitor->getId_municipio(); ?>">
-                    <!-- Foto -->
-                    <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="foto" name="foto" required  value="<?= $eleitor->getFoto(); ?>">
-                        <span class="bar"></span>
-                        <label> <i class="fa fa-file-photo-o"></i> Foto</label>
-                    </div>
+
                 
                 <!-- Enviando ou cancelando o Envio -->
                 
@@ -119,8 +134,26 @@ include_once '../cabecalho.php';
         </div>
     </div>
 <?php
-include_once '../location/scriptCEP.php';
 
 // Incluindo o termino da aplicação
 include_once '../rodape.php';
+?>
 
+<script>
+    $(function(){
+        $('#cep').change(function(){
+
+            $.ajax({
+                url: 'https://viacep.com.br/ws/72236800/json/',
+                success: function (dados) {
+                    $('#logradouro').val(dados.logradouro)
+                    $('#bairro').val(dados.bairro)
+                    $('#id_uf').val(dados.uf)
+                    $('#id_municipio').val(dados.localidade)
+                    $('#complemento').val(dados.complemento)
+                }
+            });
+
+        });
+    })
+</script>        
