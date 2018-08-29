@@ -99,4 +99,27 @@ class Uf
         $sql = "delete from uf where id_uf = '$id_uf'";
         return $conexao->executar($sql);
     }
+
+    public function existeSigla($id_uf)
+    {
+        $conexao = new Conexao();
+
+        $sql = "SELECT COUNT(*) qtd FROM uf WHERE id_uf ='$id_uf';";
+        $dados = $conexao->recuperarDados($sql);
+
+        return (boolean) $dados[0]['qtd'];
+    }
+
+    public function existeNome($nome)
+    {
+        $conexao = new Conexao();
+
+        $sql = "SELECT COUNT(*) qtd FROM uf WHERE nome ='$nome';";
+        $dados = $conexao->recuperarDados($sql);
+
+
+        return (boolean) $dados[0]['qtd'];
+    }
+
+
 }

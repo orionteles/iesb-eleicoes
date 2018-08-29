@@ -142,9 +142,9 @@ include_once '../rodape.php';
 <script>
     $(function(){
         $('#cep').change(function(){
-
+            $cep = $('#cep').val();
             $.ajax({
-                url: 'https://viacep.com.br/ws/72236800/json/',
+                url: 'https://viacep.com.br/ws/' + $cep +'/json/',
                 success: function (dados) {
                     $('#logradouro').val(dados.logradouro)
                     $('#bairro').val(dados.bairro)

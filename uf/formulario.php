@@ -51,3 +51,34 @@ include_once '../cabecalho.php';
 
 <?php
 include_once '../rodape.php';
+?>
+
+<script>
+$(function () {
+
+    $('#id_uf').change(function() {
+        $uf = $('#id_uf').val();
+        $.ajax({
+                url: 'processamento.php?acao=verificar_sigla&id_uf='+$uf,
+                success: function (dados) {
+            if (dados){
+                alert(dados);
+            }
+                }
+            });
+        });
+
+    $('#nome').change(function() {
+        $uf = $('#nome').val();
+        $.ajax({
+                url: 'processamento.php?acao=verificar_nome&nome='+$uf,
+                success: function (dados) {
+            if (dados){
+                 alert(dados);
+            }
+                }
+            });
+        });
+
+})
+</script>

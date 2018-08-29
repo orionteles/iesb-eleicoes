@@ -18,6 +18,22 @@ switch ($_GET['acao']) {
     case 'excluir':
         $uf->excluir($_GET['id_uf']);
         break;
+    case 'verificar_sigla':
+        $existe = $uf->existeSigla($_GET['id_uf']);
+
+        if ($existe){
+            echo "A UF {$_GET['id_uf']} já existe informe outra.";
+        }
+        die;
+        break;
+    case 'verificar_nome':
+        $existe = $uf->existeNome($_GET['nome']);
+
+        if ($existe){
+            echo "O nome {$_GET['nome']} já existe informe outra.";
+        }
+        die;
+        break;
 }
 
 header('location: index.php');
