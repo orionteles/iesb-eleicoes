@@ -9,17 +9,16 @@ switch ($_GET['Op']){
     case 'alterar':
         $id_uf = $_GET['id_uf'];
         $uf = $conexao->recuperarDados("SELECT * FROM `uf` WHERE `id_uf` = '$id_uf' ");
-        $UF[0] = "placeholder = '$uf[0]'";
-        $UF[1] = "placeholder = '$uf[1]'";
-
+        $UF[0] = "placeholder ='{$uf[0]}'";
+        $UF[1] = "placeholder ='{$uf[1]}'";
         break;
 
     case 'novo':
         $UF[0] = "value=''";
         $UF[1] = "value=''";
-
         break;
     default:
+
         break;
 }
 ?>
@@ -39,13 +38,12 @@ switch ($_GET['Op']){
                 <form action="processamento.php" method="post" class="form-horizontal">
 
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="id_uf" name="id_uf" required <?= $UF[0] ?> >
+                        <input type="text" class="form-text" id="id_uf" name="id_uf" required <?= $UF[0] ?> />
                         <span class="bar"></span>
                         <label>Sigla UF:</label>
                     </div>
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="nome" name="nome" required
-                            <?= $UF[1] ?>>
+                        <input type="text" class="form-text" id="nome" name="nome" required <?= $UF[1] ?>/>
                         <span class="bar"></span>
                         <label>Nome</label>
                     </div>

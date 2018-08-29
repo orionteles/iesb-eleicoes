@@ -1,5 +1,5 @@
 <?php
-include_once 'Uf.php';
+require_once 'Uf.php';
 
 if(!empty($_POST['acao'])){
     $uf = new Uf($_POST);
@@ -12,11 +12,9 @@ if(!empty($_POST['acao'])){
             $uf->alterar();
             break;
     }
-
 }
 
 elseif(!empty($_GET['acao'])){
-    $_GET['nome'] = 'nome';
     $uf = new Uf($_GET);
     switch ($_GET['acao']){
         case 'excluir':
@@ -24,7 +22,7 @@ elseif(!empty($_GET['acao'])){
             break;
     }
 }
-else{}
-
-header('location: index.php');
-die();
+else{
+    header('location: index.php');
+    die(false);
+}

@@ -1,10 +1,11 @@
 <?php
-
 include_once '../Conexao.php';
 
 class Uf{
+
     protected $id_uf;
     protected $nome;
+
     public function __construct($dados){
         $this->setNome($dados['nome']);
         $this->setIdUf($dados['id_uf']);
