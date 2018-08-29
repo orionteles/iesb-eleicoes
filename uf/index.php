@@ -1,10 +1,13 @@
 <?php
-include_once 'Uf.php';
+require_once'../cabecalho.php';
+require_once'../Conexao.php';
 
-$uf = new Uf();
-$aUf = $uf->recuperarDados();
+$uf = new Conexao();
+$aUf = $uf->recuperarDados("SELECT * FROM `uf`");
+//echo '<pre>';
+//print_r($aUf);
+//die();
 
-include_once '../cabecalho.php';
 ?>
 
     <div class="panel box-shadow-none content-header">
@@ -19,13 +22,12 @@ include_once '../cabecalho.php';
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">
-                    <a class="btn btn-warning" href="formulario.php">Novo</a>
+                    <a class="btn btn-warning" href="formulario.php?Op=novo">Novo</a>
                 </div>
                 <div class="panel-body">
                     <div class="responsive-table">
 
-                        <table id="datatables-example"
-                               class="table table-bordered table-hover table-striped table-condensed">
+                        <table id="datatables-example" class="table table-bordered table-hover table-striped table-condensed">
                             <thead>
                             <tr>
                                 <th colspan="2" width="10%" style="text-align: center">Ações</th>
@@ -33,22 +35,19 @@ include_once '../cabecalho.php';
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($aUf as $uf) {
-                                echo "
-                                    <tr>
-                                        <td>
-                                            <a href='formulario.php?id_uf={$uf['id_uf']}'><span class='icons icon-note'></span></a>
-                                        </td>
-                                        <td>
-                                            <a href='processamento.php?acao=excluir&id_uf={$uf['id_uf']}'><span class='fa fa-trash-o'></span></a>
-                                        </td>
-                                        <td>{$uf['nome']}</td>
-                                    </tr>
-                                ";
-                            } ?>
+                            <?php foreach ($aUf as $uf) { ?>
+                                <tr>
+                                    <td>
+                                        <a href='formulario.php?Op=alterar&id_uf=<?= $uf[0] ?>'><span class='icons icon-note'></span></a>
+                                    </td>
+                                    <td>
+                                        <a href='processamento.php?acao=excluir&id_uf=<?= $uf[0] ?>'><span class='fa fa-trash-o'></span></a>
+                                    </td>
+                                    <td><?= $uf[1] ?></td>
+                                </tr>
+                            <?php } ?>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
@@ -56,4 +55,4 @@ include_once '../cabecalho.php';
     </div>
 
 <?php
-include_once '../rodape.php';
+require_once'../rodape.php';

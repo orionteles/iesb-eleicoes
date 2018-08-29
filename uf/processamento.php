@@ -1,23 +1,30 @@
 <?php
 include_once 'Uf.php';
 
-$uf = new Uf();
-//print_r($_POST);echo'<br>';
-//print_r($_GET);die;
+if(!empty($_POST['acao'])){
+    $uf = new Uf($_POST);
+    switch ($_POST['acao']) {
+        case 'salvar':
+            $uf->inserir();
+            break;
 
-switch ($_GET['acao']) {
-    case 'salvar':
-        if (!empty($_POST['id_uf'])) {
-//            print_r($_POST);die;
-            $uf->alterar($_POST);
-        } else {
-//            print_r($_POST);die;
-            $uf->inserir($_POST);
-        }
-        break;
-    case 'excluir':
-        $uf->excluir($_GET['id_uf']);
-        break;
+        case 'alterar':
+            $uf->alterar();
+            break;
+    }
+
 }
 
+elseif(!empty($_GET['acao'])){
+    $_GET['nome'] = 'nome';
+    $uf = new Uf($_GET);
+    switch ($_GET['acao']){
+        case 'excluir':
+            $uf->excluir();
+            break;
+    }
+}
+else{}
+
 header('location: index.php');
+die();

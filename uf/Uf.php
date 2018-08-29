@@ -2,51 +2,32 @@
 
 include_once '../Conexao.php';
 
-class Uf
-{
-
+class Uf{
     protected $id_uf;
     protected $nome;
+    public function __construct($dados){
+        $this->setNome($dados['nome']);
+        $this->setIdUf($dados['id_uf']);
+    }
 
-    /**
-     * @return mixed
-     */
     public function getIdUf()
     {
         return $this->id_uf;
     }
 
-    /**
-     * @param mixed $id_uf
-     */
     public function setIdUf($id_uf)
     {
         $this->id_uf = $id_uf;
     }
 
-    /**
-     * @return mixed
-     */
     public function getNome()
     {
         return $this->nome;
     }
 
-    /**
-     * @param mixed $nome
-     */
     public function setNome($nome)
     {
         $this->nome = $nome;
-    }
-
-
-    public function recuperarDados()
-    {
-        $conexao = new Conexao();
-
-        $sql = "select * from uf order by nome";
-        return $conexao->recuperarDados($sql);
     }
 
     public function carregarPorId($id_uf)
@@ -65,38 +46,21 @@ class Uf
         return $conexao->executar($sql);
     }
 
-    public function inserir($dados)
-    {
-        $id_uf = $dados['id_uf'];
-        $nome = $dados['nome'];
-
+    public function inserir(){
         $conexao = new Conexao();
-
-        $sql = "insert into uf (id_uf, nome) values ('$id_uf', '$nome')";
-//        print_r($sql); die;
-        return $conexao->executar($sql);
+        return $conexao->executar("INSERT INTO `uf` VALUES ('{$this->getNome()}','{$this->getIdUf()}')");
     }
 
-    public function alterar($dados)
-    {
-        $id_uf = $dados['id_uf'];
-        $nome = $dados['nome'];
-
+    public function alterar(){
         $conexao = new Conexao();
-
-        $sql = "update uf set
-                  id_uf = '$id_uf',
-                  nome = '$nome'
-                where id_uf = '$id_uf'";
-//print_r($sql);die;
-        return $conexao->executar($sql);
+        $conexao->executar("UPDATE `uf` SET `id_uf` = '{$this->getIdUf()}', `nome` = '{$this->getNome()}' WHERE `id_uf` = '{$this->getIdUf()}'");
+        return true;
     }
 
-    public function excluir($id_uf)
-    {
+    public function excluir(){
         $conexao = new Conexao();
-
-        $sql = "delete from uf where id_uf = '$id_uf'";
-        return $conexao->executar($sql);
+        $conexao->executar("DELETE FROM `uf` WHERE `id_uf` = '{$this->getIdUf()}'");
+        return true;
     }
 }
+

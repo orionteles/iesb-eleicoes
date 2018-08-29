@@ -71,7 +71,7 @@ include_once '../cabecalho.php';
                         <span class="bar"></span>
                         <label> <i class="icons icon-map"></i> CEP</label>
                     </div>
-                </div>
+
                 <!-- Segunda coluna do Formulário -->
                 <div class="col-md-6">
                      <!-- logradouro -->
@@ -104,7 +104,7 @@ include_once '../cabecalho.php';
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="foto" name="foto" required  value="<?php echo $eleitor->getFoto(); ?>">
                         <span class="bar"></span>
-                        <label> <i class="fa fa-file-photo-o"></i> Foto</label>
+                        <label for="foto"> <i class="fa fa-file-photo-o"></i> Foto</label>
                     </div>
                 
                 <!-- Enviando ou cancelando o Envio -->
@@ -124,3 +124,36 @@ include_once '../location/scriptCEP.php';
 
 // Incluindo o termino da aplicação
 include_once '../rodape.php';
+
+?>
+
+<script>
+    // $(function(){
+
+    //     $('#nome').click(function(){
+
+    //         alert('Você clicou no campo Nome');
+    //         alert('O valor do campo é: ' + $('#nome').val());
+    //     });
+
+    //     $('#titulo').blur(function(){
+    //         nome = $('#nome').val();
+    //         titulo = $('#titulo').val();
+
+    //         $('#logradouro').val(nome + '<->' + titulo);
+    //     })
+
+    // });
+
+    $(function(){
+        $('#nome').change(function(){
+
+            $.ajax({
+                url: 'requisicao.php',
+                success: function (dados) {
+                    $('#logradouro').val(dados);
+                }  
+            });
+        })
+    })
+</script>

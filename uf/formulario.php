@@ -1,13 +1,27 @@
 <?php
-include_once 'Uf.php';
+require_once '../cabecalho.php';
+require_once '../Conexao.php';
+$conexao = new Conexao();
 
-$uf = new Uf();
+$_GET['Op'] = empty($_GET['Op']) ? 'alterar' : 'novo';
 
-if (!empty($_GET['id_uf'])) {
-    $uf->carregarPorId($_GET['id_uf']);
+switch ($_GET['Op']){
+    case 'alterar':
+        $id_uf = $_GET['id_uf'];
+        $uf = $conexao->recuperarDados("SELECT * FROM `uf` WHERE `id_uf` = '$id_uf' ");
+        $UF[0] = "placeholder = '$uf[0]'";
+        $UF[1] = "placeholder = '$uf[1]'";
+
+        break;
+
+    case 'novo':
+        $UF[0] = "value=''";
+        $UF[1] = "value=''";
+
+        break;
+    default:
+        break;
 }
-
-include_once '../cabecalho.php';
 ?>
 
     <div class="panel box-shadow-none content-header">
@@ -22,25 +36,22 @@ include_once '../cabecalho.php';
         <div class="col-md-12 panel-body" style="padding-bottom:30px;">
             <div class="col-md-12">
 
-                <form action="processamento.php?acao=salvar" method="post" class="form-horizontal">
+                <form action="processamento.php" method="post" class="form-horizontal">
 
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                        <input type="text" class="form-text" id="id_uf" name="id_uf" required
-                               value="<?= $uf->getIdUf(); ?>">
+                        <input type="text" class="form-text" id="id_uf" name="id_uf" required <?= $UF[0] ?> >
                         <span class="bar"></span>
-                        <label>Sigla UF</label>
+                        <label>Sigla UF:</label>
                     </div>
                     <div class="form-group form-animate-text" style="margin-top:40px !important;">
                         <input type="text" class="form-text" id="nome" name="nome" required
-                               value="<?php echo $uf->getNome(); ?>">
+                            <?= $UF[1] ?>>
                         <span class="bar"></span>
                         <label>Nome</label>
                     </div>
                     <div class="form-group">
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success"><span class="fa fa-thumbs-o-up"> </span>
-                                Salvar
-                            </button>
+                            <button type="submit" name="acao" value="salvar" class="btn btn-success"><span class="fa fa-thumbs-o-up"> </span>Salvar</button>
                             <a class="btn btn-danger" href="index.php"><span class="fa fa-reply"> </span> Voltar</a>
                         </div>
                     </div>
@@ -49,5 +60,4 @@ include_once '../cabecalho.php';
         </div>
     </div>
 
-<?php
-include_once '../rodape.php';
+<?php require_once '../rodape.php';

@@ -30,7 +30,7 @@
             <div class="user col-md-12">
                 <ul class="nav nav-list">
                     <li class="online">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -41,7 +41,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="away">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -52,7 +52,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="offline">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -60,7 +60,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="offline">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -68,7 +68,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="online">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -79,7 +79,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="offline">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -87,7 +87,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="online">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -98,7 +98,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="offline">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -106,7 +106,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="offline">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -114,7 +114,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="online">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -125,7 +125,7 @@
                         <div class="dot"></div>
                     </li>
                     <li class="online">
-                        <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                        <img src="tema/asset/img/avatar.jpg" alt="user name">
                         <div class="name">
                             <h5><b>Bill Gates</b></h5>
                             <p>Hi there.?</p>
@@ -155,13 +155,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-xs-3 avatar">
-                                    <img src="../tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
+                                    <img src="tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
                                 </div>
                             </div>
 
                             <div class="row msg_container receive">
                                 <div class="col-md-3 col-xs-3 avatar">
-                                    <img src="../tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
+                                    <img src="tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
                                 </div>
                                 <div class="col-md-9 col-xs-9 bubble">
                                     <div class="messages msg_receive">
@@ -181,13 +181,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-xs-3 avatar">
-                                    <img src="../tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
+                                    <img src="tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
                                 </div>
                             </div>
 
                             <div class="row msg_container receive">
                                 <div class="col-md-3 col-xs-3 avatar">
-                                    <img src="../tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
+                                    <img src="tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
                                 </div>
                                 <div class="col-md-9 col-xs-9 bubble">
                                     <div class="messages msg_receive">
@@ -207,13 +207,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-xs-3 avatar">
-                                    <img src="../tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
+                                    <img src="tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
                                 </div>
                             </div>
 
                             <div class="row msg_container receive">
                                 <div class="col-md-3 col-xs-3 avatar">
-                                    <img src="../tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
+                                    <img src="tema/asset/img/avatar.jpg" class=" img-responsive " alt="user name">
                                 </div>
                                 <div class="col-md-9 col-xs-9 bubble">
                                     <div class="messages msg_receive">
@@ -233,73 +233,73 @@
                     <ul>
                         <li class="online">
                             <a href=""  data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <div class="user-avatar"><img src="../tema/asset/img/avatar.jpg" alt="user name"></div>
+                                <div class="user-avatar"><img src="tema/asset/img/avatar.jpg" alt="user name"></div>
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="offline">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="away">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="online">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="offline">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="away">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="offline">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="offline">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="away">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="online">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="away">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
                         <li class="away">
                             <a href="" data-toggle="tooltip" data-placement="left" title="Akihiko avaron">
-                                <img src="../tema/asset/img/avatar.jpg" alt="user name">
+                                <img src="tema/asset/img/avatar.jpg" alt="user name">
                                 <div class="dot"></div>
                             </a>
                         </li>
@@ -623,23 +623,23 @@
 <!-- end: Mobile -->
 
 <!-- start: Javascript -->
-<script src="../tema/asset/js/jquery.min.js"></script>
-<script src="../tema/asset/js/jquery.ui.min.js"></script>
-<script src="../tema/asset/js/bootstrap.min.js"></script>
+<script src="tema/asset/js/jquery.min.js"></script>
+<script src="tema/asset/js/jquery.ui.min.js"></script>
+<script src="tema/asset/js/bootstrap.min.js"></script>
 
 <!-- plugins -->
-<script src="../tema/asset/js/plugins/moment.min.js"></script>
-<script src="../tema/asset/js/plugins/fullcalendar.min.js"></script>
-<script src="../tema/asset/js/plugins/jquery.nicescroll.js"></script>
-<script src="../tema/asset/js/plugins/jquery.vmap.min.js"></script>
-<script src="../tema/asset/js/plugins/maps/jquery.vmap.world.js"></script>
-<script src="../tema/asset/js/plugins/jquery.vmap.sampledata.js"></script>
-<script src="../tema/asset/js/plugins/chart.min.js"></script>
-<script src="../tema/asset/js/plugins/jquery.datatables.min.js"></script>
-<script src="../tema/asset/js/plugins/datatables.bootstrap.min.js"></script>
+<script src="tema/asset/js/plugins/moment.min.js"></script>
+<script src="tema/asset/js/plugins/fullcalendar.min.js"></script>
+<script src="tema/asset/js/plugins/jquery.nicescroll.js"></script>
+<script src="tema/asset/js/plugins/jquery.vmap.min.js"></script>
+<script src="tema/asset/js/plugins/maps/jquery.vmap.world.js"></script>
+<script src="tema/asset/js/plugins/jquery.vmap.sampledata.js"></script>
+<script src="tema/asset/js/plugins/chart.min.js"></script>
+<script src="tema/asset/js/plugins/jquery.datatables.min.js"></script>
+<script src="tema/asset/js/plugins/datatables.bootstrap.min.js"></script>
 
 <!-- custom -->
-<script src="../tema/asset/js/main.js"></script>
+<script src="tema/asset/js/main.js"></script>
 <script type="text/javascript">
     (function(jQuery){
 
