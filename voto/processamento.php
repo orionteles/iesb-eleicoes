@@ -21,4 +21,4 @@ switch ($_GET['acao']){
 			break;
 	}
 }
-//header('location: index.php');
+header('location: index.php');
