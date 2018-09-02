@@ -107,18 +107,6 @@ class Voto {
         return $conexao->recuperarDados($sql);
 	}
 	
-	public function recuperarDados2() {
-		$conexao = new Conexao();
-	//TODO : 
-	//select from eleitor;
-	//select from cargo;
-	//select from candidato;
-	//retornar um array com uma única tabela 
-	//pois no foreach as 'id' estão diferente (no formulário)
-        $sql = "select * from voto order by id_voto";
-        return $conexao->recuperarDados($sql);
-	}
-	
 	public function alterar($temp){ 
 	    $this->set_id_voto($temp['id_voto']);
 		$this->set_id_eleitor($temp['id_eleitor']);
