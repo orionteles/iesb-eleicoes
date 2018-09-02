@@ -1,6 +1,6 @@
 <?php
 
-// Incluindo o inicio da aplicação
+// Incluindo o inicio da aplicaÃ§Ã£o
 include_once '../cabecalho.php';
 
 // Incluindo a classe de Cargo
@@ -30,7 +30,7 @@ if(!empty($_GET['id_voto'])){
     </div>
     <div class="col-md-offset-1 col-md-10 panel">
         <div class="col-md-12 panel-body" style="padding-bottom:30px;">
-        <!--Primeira coluna do Formulário  -->
+        <!--Primeira coluna do FormulÃ¡rio  -->
         <div class="col-md-12 col-lg-12">
                 <form action="processamento.php?acao=salvar" method="post" class="form-horizontal">
                     <div class="form-group form-animate-text col-md-5" style="margin-top:40px !important;">
@@ -61,10 +61,8 @@ if(!empty($_GET['id_voto'])){
 								$mEleitor = new Eleitor();
 								$sql = "select nome, id_eleitor from eleitor";
 								$eleitor = $mEleitor->recuperarDados($sql);
-								$i = 0;
 									foreach ($eleitor as $result) {
 										echo "\<option value='" . $result['id_eleitor'] . "'>" . $result['nome'] . "</option>";
-										$i += 1;
 									}
                                 ?>
                         </select>
@@ -81,10 +79,8 @@ if(!empty($_GET['id_voto'])){
 								$mCargo = new Cargo();
 								$sql = "select nome, id_cargo from cargo";
 								$cargo = $mCargo->recuperarDados($sql);
-								$i = 0;
 									foreach ($cargo as $result) {
 										echo "\<option value='" . $result['id_cargo'] . "'>" . $result['nome'] . "</option>";
-										$i += 1;
 									}
                                 ?>
                         </select>
@@ -94,7 +90,7 @@ if(!empty($_GET['id_voto'])){
                        <label> <i class="icon-ghost"></i> Candidato </label>
                         <br>
                         <br>
-                        <select id="candidato" value='Olá' name="id_candidato">
+                        <select id="candidato" value='OlÃ¡' name="id_candidato">
                             <option value="">Selecione</option>
                                 <?php
                                 ?>
@@ -113,5 +109,5 @@ if(!empty($_GET['id_voto'])){
         </div>
     </div>
 <?php
-// Incluindo o termino da aplicação
+// Incluindo o termino da aplicaÃ§Ã£o
 include_once '../rodape.php';
