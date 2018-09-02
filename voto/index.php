@@ -4,7 +4,7 @@ include_once 'Voto.php';
 
 $voto = new Voto();
 // Recuperando os dados de $votos
-$aVotos = $voto->recuperarDados();
+$aVotos = $voto->recuperarDados2();
 
 // Incluindo o incio da aplicação
 include_once '../cabecalho.php';
@@ -31,7 +31,7 @@ include_once '../cabecalho.php';
                             <thead>
                             <tr>
                                 <th colspan="2" width="5%">Ações</th>
-                                <th>Nome Eleitor</th>
+                                <th>Eleitor</th>
                                 <th>Cargo</th>
                                 <th>Candidato</th>
                                 <th>Tipo</th>
@@ -42,14 +42,17 @@ include_once '../cabecalho.php';
                             <?php foreach ($aVotos as $voto){
                                 echo "
                                     <tr>
+                                        <td>{$voto['eleitor']}</td>
+                                        <td>{$voto['cargo']}</td>
+                                        <td>{$voto['candidato']}</td>
+                                        <td>{$voto['tipo']}</td>
+                                        <td>{$voto['data']}</td>
                                         <td>
-                                            <a href='formulario.php?id_Voto={$voto['id_voto']}'><span class='icons icon-note'></span></a>
+                                            <a href='formulario.php?id_voto={$voto['id_voto']}'><span class='icons icon-note'></span></a>
                                         </td>
                                         <td>
-                                            <a href='processamento.php?acao=excluir&id_Voto={$voto['id_voto']}'><span class='fa fa-trash-o'></span></a>
+                                            <a href='processamento.php?acao=excluir&id_voto={$voto['id_voto']}'><span class='fa fa-trash-o'></span></a>
                                         </td>
-                                        <td>{$voto['nome']}</td>
-                                        <td>{$voto['id_uf']}</td>
                                     </tr>
                                 ";
                             } ?>
