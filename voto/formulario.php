@@ -18,6 +18,7 @@ $mVoto = new Voto();
 if(!empty($_GET['id_voto'])){
    //$mCargo->carregarPorId($_GET['id_cargo']);
 }
+
 ?>
     <!-- Criando o Formulario de eleitor -->
     <div class="panel box-shadow-none content-header">
