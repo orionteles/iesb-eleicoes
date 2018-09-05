@@ -386,5 +386,27 @@ class Eleitor{
         return $conexao->executar($sql);
     }
 
+    public function existeTitulo($titulo)
+    {
+        $conexao = new Conexao();
+
+        $sql = "SELECT COUNT(*) qtd FROM eleitor WHERE titulo ='$titulo';";
+        $dados = $conexao->recuperarDados($sql);
+
+
+        return $dados[0]['qtd'];
+    }
+
+    public function existeNome($nome)
+    {
+        $conexao = new Conexao();
+
+        $sql = "SELECT COUNT(*) qtd FROM eleitor WHERE nome ='$nome';";
+        $dados = $conexao->recuperarDados($sql);
+
+
+        return $dados[0]['qtd'];
+    }
+
 
 }

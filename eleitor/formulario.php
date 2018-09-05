@@ -32,6 +32,12 @@ include_once '../cabecalho.php';
     </div>
     <div class="col-md-offset-1 col-md-10 panel">
         <div class="col-md-12 panel-body" style="padding-bottom:30px;">
+        <!--DIV Mensagem            -->
+            <div id="mensagemTitulo">
+            </div>
+            <!--DIV Nome            -->
+            <div id="mensagemNome">
+            </div>
         <!--Primeira coluna do Formulário  -->
         <div class="col-md-6">
                 <form action="processamento.php?acao=salvar" method="post" class="form-horizontal">
@@ -155,5 +161,32 @@ include_once '../rodape.php';
             });
 
         });
+
+        $('#titulo').change(function() {
+            $titulo = $('#titulo').val();
+            $.ajax({
+                url: 'processamento.php?acao=verificar_titulo&titulo='+$titulo,
+                success: function (dados) {
+                    if (dados){
+                        // alert(dados);
+                        $('#mensagemTitulo').html(dados);
+                    }
+                }
+            });
+        });
+
+        $('#nome').change(function() {
+            $nome= $('#nome').val();
+            $.ajax({
+                url: 'processamento.php?acao=verificar_nome&nome='+$nome,
+                success: function (dados) {
+                    if (dados){
+                        // alert(dados);
+                        $('#mensagemNome').html(dados);
+                    }
+                }
+            });
+        });
+
     })
 </script>        

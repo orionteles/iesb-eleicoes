@@ -69,9 +69,9 @@ $(function () {
         });
 
     $('#nome').change(function() {
-        $uf = $('#nome').val();
+        $nome = $('#nome').val();
         $.ajax({
-                url: 'processamento.php?acao=verificar_nome&nome='+$uf,
+                url: 'processamento.php?acao=verificar_nome&nome='+$nome,
                 success: function (dados) {
             if (dados){
                  alert(dados);
@@ -79,6 +79,5 @@ $(function () {
                 }
             });
         });
-
 })
 </script>
