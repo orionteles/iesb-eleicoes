@@ -2,8 +2,6 @@
 include_once 'Uf.php';
 
 $uf = new Uf();
-//print_r($_POST);echo'<br>';
-//print_r($_GET);die;
 
 switch ($_GET['acao']) {
     case 'salvar':
@@ -18,6 +16,23 @@ switch ($_GET['acao']) {
     case 'excluir':
         $uf->excluir($_GET['id_uf']);
         break;
+    case 'verificar_sigla':
+        $existe = $uf->existeSigla($_GET['id_uf']);
+
+        if($existe){
+            echo "A UF {$_GET['id_uf']} já existe";
+        }
+        die;
+    case 'verificar_nome':
+        $existe = $uf->existeNome($_GET['nome']);
+
+        if($existe){
+            echo '<div class="alert alert-success">
+                <strong>Atenção!</strong>
+                <p>A UF Já existe</p>
+            </div>';
+        }
+        die;
 }
 
 header('location: index.php');

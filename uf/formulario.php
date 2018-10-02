@@ -18,7 +18,11 @@ include_once '../cabecalho.php';
         </div>
     </div>
 
+
     <div class="col-md-offset-1 col-md-10 panel">
+
+        <div id="mensagem"></div>
+
         <div class="col-md-12 panel-body" style="padding-bottom:30px;">
             <div class="col-md-12">
 
@@ -51,3 +55,27 @@ include_once '../cabecalho.php';
 
 <?php
 include_once '../rodape.php';
+?>
+
+<script>
+    $(function(){
+        $('#id_uf').change(function(){
+            $.ajax({
+                url: 'processamento.php?acao=verificar_sigla&id_uf=' + $('#id_uf').val(),
+                success: function (dados) {
+                    if(dados){
+                        alert(dados);
+                    }
+                }
+            });
+        });
+
+        $('#nome').change(function(){
+
+            alert($('#nome').val());
+
+            $('#mensagem').load('processamento.php?acao=verificar_nome&' + $('#nome').val());
+        });
+
+    });
+</script>
