@@ -8,11 +8,11 @@ class Municipio{
     protected $nome;
     protected $id_uf;
 
-    public function recuperarDados()
+    public function recuperarDados($id_uf = null)
     {
         $conexao = new Conexao();
 
-        $sql = "select * from municipio order by nome";
+        $sql = "select * from municipio where id_uf = '$id_uf' order by nome";
         return $conexao->recuperarDados($sql);
     }
 
