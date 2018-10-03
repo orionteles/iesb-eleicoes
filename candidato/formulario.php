@@ -1,7 +1,7 @@
 <?php
-// Incluindo a classe de candidato
+// Incluindo a classe de Candidato
 include_once 'Candidato.php';
-// Incluindo a classe de municipio
+// Incluindo a classe de Municipio
 include_once '../municipio/Municipio.php';
 // Incluindo a classe de Partido
 include_once '../partido/Partido.php';
@@ -9,20 +9,20 @@ include_once '../partido/Partido.php';
 include_once '../cargo/Cargo.php';
 
 $candidato = new Candidato();
-// Recuperando os dados de candidato
+// Recuperando os dados de Candidato
 $aCandidato = $candidato->recuperarDados();
 
 $municipio = new Municipio();
-// Recuperando os dados de municipio
+// Recuperando os dados de Municipio
 $aMunicipio = $municipio->recuperarDados();
 
 $partido = new Partido();
-// Recuperando os dados de partido
+// Recuperando os dados de Partido
 $aPartido = $partido->recuperarDados();
 
 
 $cargo = new Cargo();
-// Recuperando os dados de cargo
+// Recuperando os dados de Cargo
 $aCargo = $cargo->recuperarDados();
 
 
@@ -59,7 +59,7 @@ include_once '../cabecalho.php';
                 </div>
                 <!-- telefone -->
                 <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input type="tel" class="form-text" id="telefone" name="telefone" required  value="<?= $candidato->getTelefone(); ?>">
+                    <input type="text" class="form-text" id="celular" name="telefone" required  value="<?= $candidato->getTelefone(); ?>">
                     <span class="bar"></span>
                     <label> <i class="fa fa-mobile-phone"></i> Telefone</label>
                 </div>
@@ -77,7 +77,7 @@ include_once '../cabecalho.php';
                 </div>
                 <!-- CEP -->
                 <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input type="text" class="form-text" id="cep" name="cep" required  value="<?= $candidato->getCep(); ?>">
+                    <input type="text" class="form-text" id="buscacep" name="cep" required  value="<?= $candidato->getCep(); ?>">
                     <span class="bar"></span>
                     <label> <i class="icons icon-map"></i> CEP</label>
                 </div>
@@ -101,15 +101,16 @@ include_once '../cabecalho.php';
                 </div>
                 <!-- numero_endereco -->
                 <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input type="text" class="form-text" id="numero_endereco" name="numero_endereco" required  value="<?= $candidato->getNumero_endereco(); ?>">
+                    <input type="text" class="form-text" id="numero_endereco" name="numero_endereco" required  value="<?= $candidato->getNumeroEndereco(); ?>">
                     <span class="bar"></span>
-                    <label> <i class="icons icon-location-pin"></i> Numero Endereco</label>
+                    <label> <i class="icons icon-location-pin"></i> Número Endereço</label>
                 </div>
+
                 <!-- id_municipio-->
-                <input type="hidden" class="form-text" id="id_municipio" name="id_municipio" required  value="<?= $candidato->getId_municipio(); ?>">
+                <input type="hidden" class="form-text" id="id_municipio" name="id_municipio" required  value="<?= $candidato->getIdMunicipio(); ?>">
                 <!-- Foto -->
                 <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input type="text" class="form-text" id="foto" name="foto" required  value="<?= $candidato->getFoto(); ?>">
+                    <input type="file" class="form-text" id="foto" name="foto" required  value="<?= $candidato->getFoto(); ?>">
                     <span class="bar"></span>
                     <label> <i class="fa fa-file-photo-o"></i> Foto</label>
                 </div>
@@ -128,4 +129,23 @@ include_once '../cabecalho.php';
 include_once '../location/scriptCEP.php';
 
 // Incluindo o termino da aplicação
-include_once '../rodape.php';
+include_once '../rodape.php'; ?>
+<script>
+    $(function () {
+       // $("#celular").mask("(99)9999-9999");
+
+        $('#buscacep').change(function(){
+
+            $.ajax({
+                url: 'https://viacep.com.br/ws/' + $(this).val() +'/json/',
+                success: function (dados) {
+                    $('#logradouro').val(dados.logradouro);
+                    $('#bairro').val(dados.bairro);
+                    $('#id_uf').val(dados.uf);
+                    $('#complemento').val(dados.complemento);
+                }
+            });
+
+        });
+    });
+</script>

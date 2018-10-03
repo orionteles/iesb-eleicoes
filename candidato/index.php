@@ -17,11 +17,9 @@ $partido = new Partido();
 // Recuperando os dados de partido
 $aPartido = $partido->recuperarDados();
 
-
 $cargo = new Cargo();
 // Recuperando os dados de cargo
 $aCargo = $cargo->recuperarDados();
-
 
 include_once '../cabecalho.php';
 ?>
@@ -54,12 +52,12 @@ include_once '../cabecalho.php';
                             <?php foreach ($aCandidato as $candidato): ?>
                                 <tr>
                                     <td>
-                                        <a href="formulario.php?id_eleitor=<?= $candidato['id_eleitor']?>">
+                                        <a href="formulario.php?id_candidato=<?= $candidato['id_candidato']?>">
                                             <span class="icons icon-note"></span>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="processamento.php?acao=excluir&id_eleitor=<?= $candidato['id_eleitor'] ?>">
+                                        <a href="processamento.php?acao=excluir&id_candidato=<?= $candidato['id_candidato'] ?>">
                                             <span class="fa fa-trash-o"></span>
                                         </a>
                                     </td>
@@ -67,7 +65,6 @@ include_once '../cabecalho.php';
                             <?php endforeach; ?>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>

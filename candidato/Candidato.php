@@ -267,7 +267,7 @@ class Candidato{
     {
         $conexao = new Conexao();
 
-        $sql = "select * from candidato order by nome";
+        $sql = "SELECT * FROM candidato ORDER BY nome";
         return $conexao->recuperarDados($sql);
     }
 
@@ -276,7 +276,7 @@ class Candidato{
 
         $conexao = new Conexao();
 
-        $sql = "select * from candidato where id_candidato = '$id_cadidato'";
+        $sql = "SELECT * FROM candidato WHERE id_candidato = '$id_cadidato'";
         $dados = $conexao->recuperarDados($sql);
 
         $this->id_cadidato = $dados[0]['id_cadidato'];
@@ -315,16 +315,18 @@ class Candidato{
         $id_partido = $dados['id_partido'];
         $id_cargo = $dados['id_cargo'];
         $foto = $dados['foto'];
-
+        /**
+         * todo implementar upload de arquivo aqui $foto.
+         */
         $conexao = new Conexao();
 
-        $sql = "insert into candidato (id_candidato, nome, numero_candidato,
+        $sql = "INSERT INTO candidato (id_candidato, nome, numero_candidato,
                                      telefone, data_nascimento,
                                       sexo, cep,
                                        logradouro, complemento,
                                         bairro, numero_endereco, id_municipio,
                                         id_partido, id_cargo, foto)
-                            values ('$id_cadidato','$nome', '$numero_cadidato', '$telefone, 
+                            VALUES ('$id_cadidato','$nome', '$numero_cadidato', '$telefone, 
                             '$data_nascimento', '$sexo', '$cep',
                             '$logradouro', '$complemento', '$bairro', 
                             '$numero_endereco', '$id_municipio', '$id_partido', '$id_cargo', '$foto')";
@@ -352,22 +354,23 @@ class Candidato{
 
         $conexao = new Conexao();
 
-        $sql = "update candidato set
-            nome = '$nome',
-            numero_cadidato = '$numero_cadidato',
-            telefone = '$telefone',
-            data_nascimento = '$data_nascimento',
-            sexo = '$sexo',
-            cep = '$cep',
-            logradouro = '$logradouro',
-            complemento = '$complemento',
-            bairro = '$bairro',
-            numero_endereco = '$numero_endereco',
-            id_municipio = '$id_municipio',
-            id_partido = '$id_partido',
-            id_cargo = '$id_cargo',
-            foto = '$foto'
-        where id_candidato = '$id_cadidato'";
+        $sql = "UPDATE candidato
+                SET
+                    nome = '$nome',
+                    numero_cadidato = '$numero_cadidato',
+                    telefone = '$telefone',
+                    data_nascimento = '$data_nascimento',
+                    sexo = '$sexo',
+                    cep = '$cep',
+                    logradouro = '$logradouro',
+                    complemento = '$complemento',
+                    bairro = '$bairro',
+                    numero_endereco = '$numero_endereco',
+                    id_municipio = '$id_municipio',
+                    id_partido = '$id_partido',
+                    id_cargo = '$id_cargo',
+                    foto = '$foto'
+                WHERE id_candidato = '$id_cadidato'";
 
         return $conexao->executar($sql);
     }
@@ -376,7 +379,7 @@ class Candidato{
     {
         $conexao = new Conexao();
 
-        $sql = "delete from candidato where id_candidato = '$id_cadidato'";
+        $sql = "DELETE FROM candidato WHERE id_candidato = '$id_cadidato'";
 
         return $conexao->executar($sql);
     }
