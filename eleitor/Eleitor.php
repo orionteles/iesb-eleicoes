@@ -337,7 +337,6 @@ class Eleitor{
                             '$secao', '$telefone', '$cep',
                             '$logradouro', '$complemento', '$bairro', 
                             '$numero_endereco', '$id_municipio', '$foto')";
-                            print_r($sql);die;
 
         return $conexao->executar($sql);
     }
@@ -357,6 +356,8 @@ class Eleitor{
         $numero_endereco  = $dados['numero_endereco'];
         $id_municipio  = $dados['id_municipio'];
         $foto  = $dados['foto'];
+
+        $this->uploadFoto();
 
         $conexao = new Conexao();
 
@@ -378,12 +379,42 @@ class Eleitor{
         return $conexao->executar($sql);
     }
 
+    public function uploadFoto()
+    {
+        if($_FILES['foto']['error'] == UPLOAD_ERR_OK){
+            $origem = $_FILES['foto']['tmp_name'];
+            $destino = '../upload/eleitor/' . $_FILES['foto']['name'];
+
+            move_uploaded_file($origem, $destino);
+        }
+    }
+
     public function excluir($id_eleitor)
     {
         $conexao = new Conexao();
 
         $sql = "delete from eleitor where id_eleitor = $id_eleitor";
         return $conexao->executar($sql);
+    }
+
+    public function existeTitulo($titulo)
+    {
+        $conexao = new Conexao();
+
+        $sql = "select count(*) qtd from eleitor where titulo = '$titulo'";
+        $dados = $conexao->recuperarDados($sql);
+
+        return (boolean) $dados[0]['qtd'];
+    }
+
+    public function existeNome($nome)
+    {
+        $conexao = new Conexao();
+
+        $sql = "select count(*) qtd from eleitor where nome = '$nome'";
+        $dados = $conexao->recuperarDados($sql);
+
+        return $dados[0]['qtd'];
     }
 
 
