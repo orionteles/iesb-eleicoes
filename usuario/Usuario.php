@@ -9,7 +9,7 @@ class Usuario
     protected $nome;
     protected $email;
     protected $senha;
-    protected $fk_perfil;
+    protected $id_perfil;
 
     /**
      * @return mixed
@@ -78,17 +78,17 @@ class Usuario
     /**
      * @return mixed
      */
-    public function getFkPerfil()
+    public function getIdPerfil()
     {
-        return $this->fk_perfil;
+        return $this->id_perfil;
     }
 
     /**
-     * @param mixed $fk_perfil
+     * @param mixed $id_perfil
      */
-    public function setFkPerfil($fk_perfil)
+    public function setIdPerfil($id_perfil)
     {
-        $this->fk_perfil = $fk_perfil;
+        $this->id_perfil = $id_perfil;
     }
 
     public function recuperarDados()
@@ -102,7 +102,7 @@ class Usuario
                     user.senha,
                     pfl.nome as perfil
                 FROM usuario user
-                JOIN perfil pfl ON (user.fk_perfil = pfl.id_perfil)
+                JOIN perfil pfl ON (user.id_perfil = pfl.id_perfil)
                 ORDER BY
                     user.nome";
         return $conexao->recuperarDados($sql);
@@ -122,7 +122,7 @@ class Usuario
         $this->nome = $dados[0]['nome'];
         $this->email = $dados[0]['email'];
         $this->senha = $dados[0]['senha'];
-        $this->fk_perfil = $dados[0]['fk_perfil'];
+        $this->id_perfil = $dados[0]['id_perfil'];
 
         return $conexao->executar($sql);
     }
@@ -132,11 +132,12 @@ class Usuario
         $nome = $dados['nome'];
         $email = $dados['email'];
         $senha = md5($dados['senha']);
-        $fk_perfil = $dados['fk_perfil'];
+        $id_perfil = $dados['id_perfil'];
 
         $conexao = new Conexao();
 
-        $sql = "INSERT INTO usuario (nome, email, senha, fk_perfil) VALUES ('$nome', '$email', '$senha', '$fk_perfil')";
+        $sql = "INSERT INTO usuario (nome, email, senha, id_perfil) 
+                             VALUES ('$nome', '$email', '$senha', '$id_perfil')";
         // print_r($sql); die;
         return $conexao->executar($sql);
     }
@@ -147,7 +148,7 @@ class Usuario
         $nome = $dados['nome'];
         $email = $dados['email'];
         $senha = $dados['senha'];
-        $fk_perfil = $dados['fk_perfil'];
+        $id_perfil = $dados['id_perfil'];
 
         $conexao = new Conexao();
 
@@ -155,7 +156,7 @@ class Usuario
                   nome = '$nome',
                   email = '$email',
                   senha = '$senha',
-                  fk_perfil = '$fk_perfil'
+                  id_perfil = '$id_perfil'
                 WHERE id_usuario = '$id_usuario'";
 
         return $conexao->executar($sql);

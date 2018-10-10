@@ -53,12 +53,9 @@ include_once '../cabecalho.php';
                 </div>
                 <label> <i class="fa fa-user"></i> Perfil</label>
                 <div class="form-group form-animate-text">
-                    <select class="form-control" name="fk_perfil" id="fk" required>
+                    <select class="form-control" name="id_perfil" id="id" required>
                             <option value="">Selecione</option>
                         <?php
-                        /**
-                         * todo Implementar no sistema para retornar dados do perfil na hora do update.
-                         */
                         foreach($arPerfil as $perfil){ ?>
                             <option value="<?= $perfil['id_perfil'] ?>"><?= $perfil['nome']?></option>
                         <?php } ?>
