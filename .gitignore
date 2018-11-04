@@ -1,3 +1,7 @@
 Contém todos os arquivos que não será versionado.
 
 .idea/
+.idea/*
+
+.vscode/
+.vscode/*

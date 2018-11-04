@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+require_once 'usuario/Usuario.php';
+
+$usuario = new Usuario();
+
+$possuiAcesso = $usuario->possuiAcesso();
+
+if (!$possuiAcesso){
+    echo"<script>
+                alert('Voce nao tem acesso a essa pagina!!!');
+                window.location.href =('../usuario/logof.php');
+        </script>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,6 +28,11 @@
 
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" href="../tema/asset/css/bootstrap.min.css">
+
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 
     <!-- plugins -->
     <link rel="stylesheet" type="text/css" href="../tema/asset/css/plugins/font-awesome.min.css"/>
@@ -59,7 +81,18 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right user-nav">
-                <li class="user-name"><span>Akihiko Avaron</span></li>
+                <li class="user-name">
+                    <span>
+                        <?php
+                            if(isset($_SESSION['usuario']['nome'])){
+                                $nome = $_SESSION['usuario']['nome'];
+                            }else{
+                                $nome = '';
+                            }
+                            echo $nome;
+                        ?>
+                    </span>
+                </li>
                 <li class="dropdown avatar-dropdown">
                     <img src="../tema/asset/img/avatar.jpg" class="img-circle avatar" alt="user name"
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
@@ -76,7 +109,11 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#" class="opener-right-menu"><span class="fa fa-coffee"></span></a></li>
+                <li>
+                    <a href="../usuario/logof.php" class="opener-right-menu">
+                        <span class="fa fa-sign-out"></span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

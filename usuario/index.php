@@ -1,11 +1,11 @@
 <?php
-include_once 'Usuario.php';
-
-$usuario = new Usuario();
-$aUsuario = $usuario->recuperarDados();
- // print_r($aUsuario);die;
-
 include_once '../cabecalho.php';
+// include_once 'Usuario.php';
+
+// $usuario = new Usuario();
+$aUsuario = $usuario->recuperarDados();
+// print_r($aUsuario);die;
+
 ?>
 
     <div class="panel box-shadow-none content-header">

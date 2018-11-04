@@ -1,6 +1,6 @@
 <?php
 include_once 'Usuario.php';
-
+session_start();
 $usuario = new Usuario();
 
 switch ($_GET['acao']) {
@@ -16,7 +16,9 @@ switch ($_GET['acao']) {
     case 'excluir':
         $usuario->excluir($_GET['id_usuario']);
     break;
-
+    case 'logar':
+        $usuario->logar($_POST);
+    break;
 }
 
 header('location: index.php');
