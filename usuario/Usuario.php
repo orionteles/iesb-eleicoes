@@ -9,7 +9,7 @@ class Usuario
     protected $nome;
     protected $email;
     protected $senha;
-    protected $fk_perfil;
+    protected $id_perfil;
 
     /**
      * @return mixed
@@ -80,15 +80,15 @@ class Usuario
      */
     public function getIdPerfil()
     {
-        return $this->fk_perfil;
+        return $this->id_perfil;
     }
 
     /**
-     * @param mixed $fk_perfil
+     * @param mixed $id_perfil
      */
-    public function setIdPerfil($fk_perfil)
+    public function setIdPerfil($id_perfil)
     {
-        $this->fk_perfil = $fk_perfil;
+        $this->id_perfil = $id_perfil;
     }
 
     public function recuperarDados()
@@ -102,7 +102,7 @@ class Usuario
                     user.senha,
                     pfl.nome as perfil
                 FROM usuario user
-                JOIN perfil pfl ON (user.fk_perfil = pfl.id_perfil)
+                JOIN perfil pfl ON (user.id_perfil = pfl.id_perfil)
                 ORDER BY
                     user.nome";
         return $conexao->recuperarDados($sql);
@@ -122,7 +122,7 @@ class Usuario
         $this->nome = $dados[0]['nome'];
         $this->email = $dados[0]['email'];
         $this->senha = $dados[0]['senha'];
-        $this->fk_perfil = $dados[0]['fk_perfil'];
+        $this->id_perfil = $dados[0]['id_perfil'];
 
         return $conexao->executar($sql);
     }
@@ -132,12 +132,12 @@ class Usuario
         $nome = $dados['nome'];
         $email = $dados['email'];
         $senha = md5($dados['senha']);
-        $fk_perfil = $dados['fk_perfil'];
+        $id_perfil = $dados['id_perfil'];
 
         $conexao = new Conexao();
 
-        $sql = "INSERT INTO usuario (nome, email, senha, fk_perfil) 
-                             VALUES ('$nome', '$email', '$senha', '$fk_perfil')";
+        $sql = "INSERT INTO usuario (nome, email, senha, id_perfil) 
+                             VALUES ('$nome', '$email', '$senha', '$id_perfil')";
         // print_r($sql); die;
         return $conexao->executar($sql);
     }
@@ -148,7 +148,7 @@ class Usuario
         $nome = $dados['nome'];
         $email = $dados['email'];
         $senha = $dados['senha'];
-        $fk_perfil = $dados['fk_perfil'];
+        $id_perfil = $dados['id_perfil'];
 
         $conexao = new Conexao();
 
@@ -156,7 +156,7 @@ class Usuario
                   nome = '$nome',
                   email = '$email',
                   senha = '$senha',
-                  fk_perfil = '$fk_perfil'
+                  id_perfil = '$id_perfil'
                 WHERE id_usuario = '$id_usuario'";
 
         return $conexao->executar($sql);
@@ -181,14 +181,14 @@ class Usuario
 
         $email = $dados['email'];
         $senha  = md5($dados['senha']);
-        $sql = "SELECT id_usuario, nome, email, fk_perfil FROM usuario WHERE email = '$email' and senha = '$senha'";
+        $sql = "SELECT id_usuario, nome, email, id_perfil FROM usuario WHERE email = '$email' and senha = '$senha'";
         $dados = $conexao->recuperarDados($sql);
 
         if (count($dados)){
             $_SESSION['usuario']['id_usuario']  = $dados[0]['id_usuario'];
             $_SESSION['usuario']['nome']        = $dados[0]['nome'];
             $_SESSION['usuario']['email']       = $dados[0]['email'];
-            $_SESSION['usuario']['id_perfil']   = $dados[0]['fk_perfil'];
+            $_SESSION['usuario']['id_perfil']   = $dados[0]['id_perfil'];
 
         }
         return $conexao->executar($sql);
@@ -202,7 +202,7 @@ class Usuario
     {
         $conexao = new Conexao();
 
-        $raizUrl = '/php/iesb-eleicoes/';
+        $raizUrl = '/htdocs/iesb-eleicoes/';
         $url = $_SERVER['REQUEST_URI'];
         $sql = "SELECT * FROM pagina WHERE publica = 1";
         $paginas = $conexao->recuperarDados($sql);
@@ -221,8 +221,8 @@ class Usuario
             $perfil = $_SESSION['usuario']['id_perfil'];
 
             $sql = "SELECT * FROM permissao pe
-                    JOIN pagina pa on pa.id_pagina = pe.fk_pagina
-                    WHERE fk_perfil = $perfil";
+                    JOIN pagina pa on pa.id_pagina = pe.id_pagina
+                    WHERE id_perfil = $perfil";
             $paginas = $conexao->recuperarDados($sql);
 
             foreach ($paginas as $pagina){
@@ -230,6 +230,8 @@ class Usuario
                      return true;
                 }
             }
+            // echo 123;
+            // die;
         }
         return false;
     }
